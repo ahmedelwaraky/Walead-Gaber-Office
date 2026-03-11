@@ -1,8 +1,9 @@
+import React from 'react'
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "../style/NewsSection.css";
+import "../style/News.css";
 
-export default function NewsSection() {
+export default function News() {
   const { t, i18n } = useTranslation();
   const dir = i18n.language === "ar" ? "rtl" : "ltr";
 

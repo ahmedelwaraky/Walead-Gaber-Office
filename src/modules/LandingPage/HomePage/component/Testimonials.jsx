@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "../style/TestimonialsSection.css";
+import "../style/Testimonials.css";
 
 export default function Testimonials() {
 

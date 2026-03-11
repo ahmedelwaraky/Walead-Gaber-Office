@@ -2,14 +2,15 @@ import React from "react";
 import Navbar from "../../../../components/layout/Navbar";
 import Footer from "../../../../components/layout/Footer";
 import HeroSection from "../component/HeroSection";
-import AboutSection from "../component/AboutSection";
-import ServicesSection from "../component/servicesSection";
-import PartnersSection from "../component/PartnersSection";
-import NewsSection from "../component/NewsSection";
+import AboutSection from "../component/About";
+
 import Courses from "../component/Courses";
 import Testimonials from "../component/Testimonials";
 import Contact from "../component/Contact";
-
+import News from "../component/News";
+import Partners from "../component/Partners";
+import Services from "../component/services";
+import About from "../component/About";
 
 
 export default function HomePage() {
@@ -17,10 +18,10 @@ export default function HomePage() {
     <>
       <Navbar />
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <PartnersSection />
-      <NewsSection />
+      <About />
+      <Services />
+      <Partners />
+      <News />
       <Courses />
       <Testimonials />
       <Contact />

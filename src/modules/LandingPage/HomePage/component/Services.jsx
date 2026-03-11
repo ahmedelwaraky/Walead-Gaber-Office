@@ -1,6 +1,9 @@
+import React from 'react'
+
+
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "../style/ServicesSection.css";
+import "../style/Services.css";
 
 const ICONS = {
   audit:       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>,
@@ -11,7 +14,7 @@ const ICONS = {
   company:     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
 };
 
-export default function ServicesSection() {
+export default function Services() {
   const { t, i18n } = useTranslation();
   const dir = i18n.language === "ar" ? "rtl" : "ltr";
 
