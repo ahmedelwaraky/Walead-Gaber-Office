@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../../../components/layout/Navbar";
 import Footer from "../../../../components/layout/Footer";
 import HeroSection from "../component/HeroSection";
-import AboutSection from "../component/About";
 
 import Courses from "../component/Courses";
 import Testimonials from "../component/Testimonials";
