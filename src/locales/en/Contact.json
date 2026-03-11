@@ -1,0 +1,24 @@
+{
+  "contact": {
+    "badge": "Contact Us",
+    "heading_plain": "Get In",
+    "heading_gold": "Touch",
+    "subheading": "We'd love to hear from you — reach out about any of our services",
+    "info": [
+      { "id": "address", "label": "Address", "value": "Riyadh, Saudi Arabia — Al-Olaya District" },
+      { "id": "phone",   "label": "Phone",   "value": "+966 11 234 5678" },
+      { "id": "email",   "label": "Email",   "value": "info@almaliconsulting.com" }
+    ],
+    "map_label": "Riyadh, Al-Olaya",
+    "form": {
+      "name_label":        "Full Name",
+      "name_placeholder":  "Enter your name",
+      "email_label":       "Email Address",
+      "email_placeholder": "Enter your email",
+      "msg_label":         "Message",
+      "msg_placeholder":   "Write your message here...",
+      "submit":            "Send Message",
+      "sent":              "✓ Message sent!"
+    }
+  }
+}

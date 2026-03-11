@@ -1,0 +1,61 @@
+@keyframes testimonialReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes testimonialOrb {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(14px, -16px); }
+}
+
+.testimonial-reveal { animation: testimonialReveal 0.65s ease both; }
+.testimonial-orb    { animation: testimonialOrb 9s ease-in-out infinite; }
+
+.testimonial-grid-bg {
+  background-image:
+    linear-gradient(rgba(212,168,67,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,168,67,0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+}
+
+.testimonial-card {
+  transition: all 0.32s ease;
+  animation: slideUp 0.45s ease both;
+}
+.testimonial-card:hover {
+  border-color: rgba(212,168,67,0.3) !important;
+  transform: translateY(-4px);
+}
+.testimonial-card.active {
+  border-color: rgba(212,168,67,0.35) !important;
+  background: rgba(212,168,67,0.05) !important;
+}
+
+.nav-btn {
+  transition: all 0.25s ease;
+}
+.nav-btn:hover {
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  color: #fff !important;
+}
+
+.avatar-gold {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+}
+
+.dot-btn {
+  transition: all 0.3s ease;
+}
+
+.text-gold-grad {
+  background: linear-gradient(135deg, #b8761e, #d4a843, #f0c96a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

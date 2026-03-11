@@ -1,0 +1,19 @@
+{
+  "services": {
+    "badge": "What We Offer",
+    "heading_plain": "Our",
+    "heading_gold": "Services",
+    "subheading": "A comprehensive range of specialized professional services",
+    "cta_label": "Need a custom service? Our team is ready to help",
+    "cta_btn": "Contact Us Now",
+    "learn_more": "Learn More",
+    "items": [
+      { "id": "audit",       "tag": "Audit",       "title": "Audit & Review",         "desc": "Auditing and reviewing accounts in accordance with international auditing standards" },
+      { "id": "tax",         "tag": "Tax",          "title": "Tax Advisory",           "desc": "Specialized tax consulting and preparation of tax returns" },
+      { "id": "accounting",  "tag": "Accounting",   "title": "Accounting Services",    "desc": "Preparing financial statements and bookkeeping in accordance with international standards" },
+      { "id": "feasibility", "tag": "Studies",      "title": "Feasibility Studies",    "desc": "Economic and financial feasibility studies for new projects" },
+      { "id": "finance",     "tag": "Finance",      "title": "Financial Advisory",     "desc": "Integrated financial solutions to improve institutional financial performance" },
+      { "id": "company",     "tag": "Founding",     "title": "Company Formation",      "desc": "Company formation services including incorporation contracts and bylaws" }
+    ]
+  }
+}

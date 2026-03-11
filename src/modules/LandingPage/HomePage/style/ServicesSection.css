@@ -1,0 +1,95 @@
+@keyframes srvReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes srvScale {
+  from { opacity: 0; transform: scale(0.93) translateY(22px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes srvOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(14px, -18px) scale(1.04); }
+}
+@keyframes srvShimmer {
+  0%   { transform: translateX(120%); }
+  100% { transform: translateX(-120%); }
+}
+@keyframes iconPop {
+  0%   { transform: scale(1) rotate(0deg); }
+  40%  { transform: scale(1.18) rotate(-7deg); }
+  70%  { transform: scale(0.94) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.srv-reveal { animation: srvReveal 0.65s ease both; }
+.srv-scale  { animation: srvScale  0.6s  ease both; }
+.srv-orb    { animation: srvOrb    9s ease-in-out infinite; }
+
+.srv-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.srv-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.07) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+.srv-card:hover { transform: translateY(-7px) !important; }
+.srv-card:hover::before { opacity: 1; }
+
+.srv-shimmer {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 55%;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.07), transparent);
+  transform: translateX(120%);
+  pointer-events: none;
+}
+.srv-card:hover .srv-shimmer { animation: srvShimmer 0.9s ease forwards; }
+
+.srv-icon-box { transition: all 0.36s ease; }
+.srv-card:hover .srv-icon-box { animation: iconPop 0.5s ease forwards; }
+
+.srv-bottom-line {
+  position: absolute;
+  bottom: 0; right: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4a843, transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.srv-card:hover .srv-bottom-line { transform: scaleX(1); }
+
+.srv-learn { transition: all 0.3s ease; }
+.srv-learn svg { transition: transform 0.3s ease; }
+.srv-card:hover .srv-learn { color: #d4a843 !important; }
+.srv-card:hover .srv-learn svg { transform: translateX(-5px); }
+
+.srv-tag { transition: all 0.28s ease; }
+.srv-card:hover .srv-tag {
+  background: rgba(212, 168, 67, 0.16) !important;
+  border-color: rgba(212, 168, 67, 0.4) !important;
+  color: #8a560a !important;
+}
+
+.srv-cta-btn {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+  box-shadow: 0 6px 26px rgba(212, 168, 67, 0.36);
+  transition: all 0.3s ease;
+}
+.srv-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(212, 168, 67, 0.52);
+}
+
+.text-gold-grad {
+  background: linear-gradient(135deg, #b8761e, #d4a843, #f0c96a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

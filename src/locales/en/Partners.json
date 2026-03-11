@@ -1,0 +1,24 @@
+{
+  "partners": {
+    "badge": "Our Clients",
+    "heading_plain": "Success",
+    "heading_gold": "Partners",
+    "subheading": "We are proud of our clients' trust and partnerships with leading institutions",
+    "icons": [
+      { "label": "Real Estate" },
+      { "label": "Documents"   },
+      { "label": "Finance"     },
+      { "label": "Business"    },
+      { "label": "Protection"  },
+      { "label": "Technology"  },
+      { "label": "Investment"  },
+      { "label": "Production"  },
+      { "label": "Energy"      }
+    ],
+    "stats": [
+      { "n": "120+", "label": "Institutional Clients" },
+      { "n": "15+",  "label": "Specialized Sectors"   },
+      { "n": "98%",  "label": "Satisfaction Rate"      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "about": {
+    "badge": "Who We Are",
+    "heading_plain": "About",
+    "heading_gold": "the Firm",
+    "subheading": "A specialized firm providing accounting, financial, and legal advisory services",
+
+    "pillars": [
+      {
+        "id": "vision",
+        "title": "Vision",
+        "desc": "To be the leading choice for accounting and advisory services across the region"
+      },
+      {
+        "id": "mission",
+        "title": "Mission",
+        "desc": "Delivering distinguished professional services that drive our clients' success and financial goals"
+      },
+      {
+        "id": "values",
+        "title": "Values",
+        "desc": "Integrity, professionalism, and an unwavering commitment to quality and transparency"
+      }
+    ],
+
+    "content": {
+      "vision": {
+        "subtitle": "Our Vision for the Future",
+        "body": "Founded over 15 years ago, our firm has grown to become one of the most prominent offices specializing in accounting, financial, and legal consulting. We bring together a team of highly qualified accountants, financial advisors, and legal consultants committed to delivering excellence."
+      },
+      "mission": {
+        "subtitle": "Our Mission to Clients",
+        "body": "We are committed to delivering professional services that exceed our clients' expectations. We believe that our clients' success is our success — which is why we work diligently to achieve their financial goals and protect their interests with the highest level of competence."
+      },
+      "values": {
+        "subtitle": "Our Core Values",
+        "body": "We build our relationships on a solid foundation of integrity, transparency, and professionalism. We hold ourselves to the highest standards of quality in everything we deliver, always placing our clients' best interests above all else."
+      }
+    },
+
+    "cta_read": "Read More",
+    "cta_contact": "Contact Us",
+
+    "stats": [
+      { "n": 15,  "s": "+", "label": "Years Experience" },
+      { "n": 500, "s": "+", "label": "Happy Clients"    },
+      { "n": 50,  "s": "+", "label": "Consultants"      },
+      { "n": 98,  "s": "%", "label": "Satisfaction Rate" }
+    ]
+  }
+}

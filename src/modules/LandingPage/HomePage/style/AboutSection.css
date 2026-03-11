@@ -1,0 +1,100 @@
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(10px, -15px) scale(1.05); }
+}
+
+.reveal-up    { animation: revealUp    0.7s ease both; }
+.reveal-right { animation: revealRight 0.7s ease both; }
+.reveal-left  { animation: revealLeft  0.7s ease both; }
+
+.about-orb {
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+/* ── Pillar cards ── */
+.about-card {
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.about-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+.about-card.active::before,
+.about-card:hover::before { opacity: 1; }
+
+.about-card.active {
+  border-color: rgba(212, 168, 67, 0.45) !important;
+  background: rgba(212, 168, 67, 0.04) !important;
+  transform: translateX(-6px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 4px 0 0 #d4a843 inset;
+}
+.about-card:hover:not(.active) {
+  border-color: rgba(212, 168, 67, 0.25) !important;
+  transform: translateX(-3px);
+}
+
+/* ── Icon ── */
+.icon-ring {
+  transition: all 0.32s ease;
+}
+.about-card.active .icon-ring,
+.about-card:hover .icon-ring {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 6px 24px rgba(212, 168, 67, 0.3);
+}
+
+/* ── Buttons ── */
+.shimmer-btn {
+  background: linear-gradient(135deg, #d4a843, #f0c96a, #d4a843);
+  background-size: 200% auto;
+  transition: all 0.3s ease;
+}
+.shimmer-btn:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(212, 168, 67, 0.4);
+}
+
+/* ── Stat chips ── */
+.stat-chip {
+  transition: all 0.28s ease;
+}
+.stat-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Progress bar ── */
+.progress-line {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #d4a843, #f0c96a);
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Gold gradient text ── */
+.text-gold-grad {
+  background: linear-gradient(135deg, #b8761e, #d4a843, #f0c96a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

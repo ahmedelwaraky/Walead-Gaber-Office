@@ -1,0 +1,64 @@
+@keyframes newsReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes newsScale {
+  from { opacity: 0; transform: scale(0.94) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes newsOrb {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(12px, -14px); }
+}
+
+.news-reveal { animation: newsReveal 0.65s ease both; }
+.news-scale  { animation: newsScale  0.6s  ease both; }
+.news-orb    { animation: newsOrb    8s ease-in-out infinite; }
+
+.news-card {
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
+}
+
+.news-letter {
+  opacity: 0.18;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.news-card:hover .news-letter {
+  opacity: 0.28;
+  transform: scale(1.06);
+}
+
+.news-read {
+  transition: color 0.3s ease;
+}
+.news-read svg {
+  transition: transform 0.3s ease;
+}
+.news-card:hover .news-read svg {
+  transform: translateX(-5px);
+}
+
+.news-cat {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+}
+
+.text-gold-grad {
+  background: linear-gradient(135deg, #b8761e, #d4a843, #f0c96a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.news-view-btn {
+  transition: all 0.28s ease;
+}
+.news-view-btn:hover {
+  background: rgba(212, 168, 67, 0.08) !important;
+  transform: translateY(-2px);
+}

@@ -12,12 +12,12 @@ export default function Navbar() {
 
   const NAV_LINKS = [
     { key: "home", href: "#", active: true },
-    { key: "about", href: "#" },
-    { key: "services", href: "#" },
-    { key: "partners", href: "#" },
-    { key: "news", href: "#" },
-    { key: "courses", href: "#" },
-    { key: "contact", href: "#" },
+    { key: "about", href: "#about" },
+    { key: "services", href: "#services" },
+    { key: "partners", href: "#partners" },
+    { key: "news", href: "#news" },
+    { key: "courses", href: "#courses" },
+    { key: "contact", href: "#contact" },
   ];
 
   useEffect(() => {

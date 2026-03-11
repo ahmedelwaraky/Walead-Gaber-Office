@@ -1,0 +1,15 @@
+{
+  "testimonials": {
+    "badge": "Client Testimonials",
+    "heading_plain": "What Our",
+    "heading_gold": "Clients Say",
+    "subheading": "Hear what our clients say about our services",
+    "items": [
+      { "id": "t1", "name": "Fatima Al-Harbi",  "org": "Modern Construction Co.",    "letter": "F", "stars": 5, "text": "The feasibility study they prepared for our project was comprehensive, accurate, and helped us secure the required funding." },
+      { "id": "t2", "name": "Mohammed Al-Fahd", "org": "Al-Faisal Group",             "letter": "M", "stars": 5, "text": "A wonderful experience setting up our company. A cooperative and professional team that provided us with full legal and financial support." },
+      { "id": "t3", "name": "Sara Al-Ali",      "org": "Al-Nour Tech Foundation",    "letter": "S", "stars": 5, "text": "Specialized and precise tax consulting. They saved us a great deal of time and effort in preparing our tax returns." },
+      { "id": "t4", "name": "Khalid Al-Mutairi","org": "Gulf Group",                  "letter": "K", "stars": 5, "text": "First-class professional accounting service. I recommend every business owner to work with this outstanding firm." },
+      { "id": "t5", "name": "Noura Al-Sayed",   "org": "Al-Tamayoz Trading Company", "letter": "N", "stars": 5, "text": "The best accounting firm we have worked with. Precision, punctuality, and genuine dedication to the client's best interests." }
+    ]
+  }
+}

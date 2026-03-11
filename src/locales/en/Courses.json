@@ -1,0 +1,17 @@
+{
+  "courses": {
+    "badge": "Learn With Us",
+    "heading_plain": "Training",
+    "heading_gold": "Courses",
+    "subheading": "Develop your professional skills with our specialized training programs",
+    "hours_unit": "hrs",
+    "students_unit": "students",
+    "enroll_btn": "Enroll Now",
+    "items": [
+      { "id": "c1", "level": "Beginner",     "levelColor": "#15803d", "title": "Accounting Fundamentals", "desc": "Learn the core principles of financial accounting and journal entries",          "hours": 20, "students": 234 },
+      { "id": "c2", "level": "Intermediate", "levelColor": "#b45309", "title": "Tax Accounting",          "desc": "Master the preparation of tax returns and strategic tax planning",                "hours": 25, "students": 189 },
+      { "id": "c3", "level": "Advanced",     "levelColor": "#b91c1c", "title": "Financial Analysis",      "desc": "Analyze financial statements and make informed investment decisions",             "hours": 30, "students": 156 },
+      { "id": "c4", "level": "Beginner",     "levelColor": "#15803d", "title": "Excel for Accountants",   "desc": "Use advanced Excel features for accounting operations and financial reporting",  "hours": 15, "students": 312 }
+    ]
+  }
+}

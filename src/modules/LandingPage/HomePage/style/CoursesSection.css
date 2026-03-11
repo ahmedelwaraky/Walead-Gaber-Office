@@ -1,0 +1,52 @@
+@keyframes courseReveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes courseScale {
+  from { opacity: 0; transform: scale(0.94) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes courseOrb {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(12px, -14px); }
+}
+
+.course-reveal { animation: courseReveal 0.65s ease both; }
+.course-scale  { animation: courseScale  0.6s  ease both; }
+.course-orb    { animation: courseOrb    8s ease-in-out infinite; }
+
+.course-card {
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.course-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 168, 67, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.09) !important;
+}
+
+.course-icon {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+  transition: all 0.32s ease;
+}
+.course-card:hover .course-icon {
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 8px 28px rgba(212, 168, 67, 0.4) !important;
+}
+
+.course-enroll {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+  box-shadow: 0 4px 16px rgba(212, 168, 67, 0.3);
+  transition: all 0.28s ease;
+}
+.course-enroll:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(212, 168, 67, 0.5);
+}
+
+.text-gold-grad {
+  background: linear-gradient(135deg, #b8761e, #d4a843, #f0c96a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,42 @@
+{
+  "news": {
+    "badge": "Latest Updates",
+    "heading_plain": "Latest",
+    "heading_gold": "News",
+    "subheading": "The latest developments in accounting, tax, and financial law",
+    "read_more": "Read More",
+    "view_all": "View All News",
+    "items": [
+      {
+        "id": "n1",
+        "cat": "Legal",
+        "date": "Feb 25, 2026",
+        "letter": "L",
+        "color1": "#1a3a7c",
+        "color2": "#0c1d40",
+        "title": "A Complete Guide to Company Formation",
+        "desc": "Step-by-step guidance on setting up your company with essential legal tips"
+      },
+      {
+        "id": "n2",
+        "cat": "Accounting",
+        "date": "Mar 1, 2026",
+        "letter": "A",
+        "color1": "#0f3d3a",
+        "color2": "#0c1d40",
+        "title": "The Importance of Digital Transformation in Accounting",
+        "desc": "How technology can improve the efficiency of accounting processes in your organization"
+      },
+      {
+        "id": "n3",
+        "cat": "Tax",
+        "date": "Mar 5, 2026",
+        "letter": "T",
+        "color1": "#3a1a0c",
+        "color2": "#0c1d40",
+        "title": "New Tax Law Updates for 2026",
+        "desc": "Key amendments to the tax system and their impact on businesses and individuals"
+      }
+    ]
+  }
+}
