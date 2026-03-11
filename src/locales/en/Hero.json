@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "badge": "Over 15 years of distinguished expertise",
+    "headline1": "Accounting",
+    "headline2": "& Financial",
+    "headline3": "Advisory Services",
+    "sub": "We deliver comprehensive solutions in accounting, auditing, and financial & legal consulting at the highest standards of quality and professionalism — because your success is the measure of our excellence.",
+    "cta_primary": "View Services",
+    "cta_secondary": "Contact Us",
+    "trust_count": "+500 satisfied clients",
+    "trust_sub": "trusting our expertise across the region",
+    "card_title": "Client Financial Performance",
+    "card_live": "Live",
+    "card_metric_label": "Client Satisfaction Rate",
+    "card_metric_growth": "+12.4% this year",
+    "scroll_hint": "Scroll Down",
+    "stats": [
+      { "n": 1000, "suffix": "+", "label": "Projects Done"    },
+      { "n": 50,   "suffix": "+", "label": "Expert Advisors"  },
+      { "n": 15,   "suffix": "+", "label": "Years Experience" },
+      { "n": 500,  "suffix": "+", "label": "Happy Clients"    }
+    ]
+  }
+}

@@ -1,7 +1,19 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
-body {
-  font-family: "Cairo", sans-serif;
+
+:root[lang="ar"],
+:root[lang="ar"] * {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+}
+
+:root[lang="en"],
+:root[lang="en"] * {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }

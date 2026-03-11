@@ -1,0 +1,61 @@
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(212, 168, 67, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 67, 0.04) 1px, transparent 1px);
+  background-size: 58px 58px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+@keyframes hfadeR  { from { opacity: 0; transform: translateX(36px);  } to { opacity: 1; transform: translateX(0);  } }
+@keyframes hfadeL  { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: translateX(0);  } }
+@keyframes hfadeU  { from { opacity: 0; transform: translateY(20px);  } to { opacity: 1; transform: translateY(0);  } }
+@keyframes hfloat  { 0%, 100% { transform: translateY(0);    } 50% { transform: translateY(-10px); } }
+@keyframes hpulse  { 0%, 100% { opacity: 1; transform: scale(1);    } 50% { opacity: 0.4; transform: scale(0.75); } }
+@keyframes hscroll { 0%   { transform: translateY(0);    opacity: 1; } 100% { transform: translateY(13px); opacity: 0; } }
+@keyframes horb    { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(18px, -25px) scale(1.04); } 66% { transform: translate(-12px, 16px) scale(0.97); } }
+
+.h-fr     { animation: hfadeR  0.85s ease both; }
+.h-fl     { animation: hfadeL  0.85s ease both; }
+.h-fu     { animation: hfadeU  0.85s ease both; }
+.h-float  { animation: hfloat  4.5s ease-in-out infinite; }
+.h-orb    { animation: horb    9s   ease-in-out infinite; }
+.h-pulse  { animation: hpulse  2s   ease infinite; }
+.h-scroll { animation: hscroll 1.8s ease infinite; }
+
+.d1 { animation-delay: 0.10s; }
+.d2 { animation-delay: 0.20s; }
+.d3 { animation-delay: 0.30s; }
+.d4 { animation-delay: 0.40s; }
+.d5 { animation-delay: 0.50s; }
+.d6 { animation-delay: 0.60s; }
+
+.hcta-gold {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+  box-shadow: 0 6px 28px rgba(212, 168, 67, 0.38);
+  transition: all 0.28s ease;
+  color: #050d1f;
+}
+.hcta-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 38px rgba(212, 168, 67, 0.55);
+}
+
+.hcta-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+  backdrop-filter: blur(12px);
+  transition: all 0.28s ease;
+  color: rgba(255, 255, 255, 0.82);
+}
+.hcta-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+.htg {
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
