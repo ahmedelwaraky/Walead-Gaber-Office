@@ -8,7 +8,7 @@ import Testimonials from "../component/Testimonials";
 import Contact from "../component/Contact";
 import News from "../component/News";
 import Partners from "../component/Partners";
-import Services from "../component/services";
+import Services from "../component/Services";
 import About from "../component/About";
 
 
