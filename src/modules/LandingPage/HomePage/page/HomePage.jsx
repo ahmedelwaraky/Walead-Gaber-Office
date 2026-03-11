@@ -5,10 +5,11 @@ import AboutSection from "../component/AboutSection";
 import ServicesSection from "../component/servicesSection";
 import PartnersSection from "../component/PartnersSection";
 import NewsSection from "../component/NewsSection";
-import CoursesSection from "../component/Coursessection";
 import TestimonialsSection from "../component/Testimonialssection";
-import ContactSection from "../component/Contactsection";
 import Footer from "../../../../components/layout/Footer";
+import CoursesSection from "../component/CoursesSection";
+import ContactSection from "../component/ContactSection";
+import TestimonialsSection from "../component/Testimonialssection";
 
 export default function HomePage() {
   return (
