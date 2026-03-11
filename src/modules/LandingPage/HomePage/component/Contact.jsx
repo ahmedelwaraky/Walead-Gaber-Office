@@ -1,3 +1,6 @@
+import React from 'react'
+
+
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "../style/ContactSection.css";
@@ -38,8 +41,8 @@ function MapPlaceholder({ label }) {
     </div>
   );
 }
-
-export default function ContactSection() {
+export default function Contact() {
+ 
   const { t, i18n } = useTranslation();
   const dir = i18n.language === "ar" ? "rtl" : "ltr";
 

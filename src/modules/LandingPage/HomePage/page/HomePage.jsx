@@ -8,7 +8,7 @@ import PartnersSection from "../component/PartnersSection";
 import NewsSection from "../component/NewsSection";
 import Courses from "../component/Courses";
 import Testimonials from "../component/Testimonials";
-import ContactSection from "../component/Contactsection";
+import Contact from "../component/Contact";
 
 
 
@@ -23,9 +23,7 @@ export default function HomePage() {
       <NewsSection />
       <Courses />
       <Testimonials />
-      <ContactSection />
-  
-
+      <Contact />
       <Footer />
     </>
   );
