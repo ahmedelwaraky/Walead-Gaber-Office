@@ -6,7 +6,7 @@ import ServicesSection from "../component/servicesSection";
 import PartnersSection from "../component/PartnersSection";
 import NewsSection from "../component/NewsSection";
 import Footer from "../../../../components/layout/Footer";
-import CoursesSection from "../component/CoursesSection";
+// import CoursesSection from "../component/CoursesSection";
 import ContactSection from "../component/ContactSection";
 import  TestimonialsSection from "../component/TestimonialsSection";
 
@@ -19,7 +19,7 @@ export default function HomePage() {
       <ServicesSection />
       {/* <PartnersSection/> */}
       <NewsSection />
-      <CoursesSection />
+      {/* <CoursesSection /> */}
       <TestimonialsSection />
       <ContactSection />
       <Footer />
