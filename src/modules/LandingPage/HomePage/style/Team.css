@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+/* ═══════════════════════════════════════════
+   Variables
+   ═══════════════════════════════════════════ */
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C87A;
+  --gold-dim:     rgba(201,168,76,0.12);
+  --gold-border:  rgba(201,168,76,0.35);
+  --section-bg:   #071022;
+  --text:         #e8e4d8;
+  --text-dim:     rgba(232,228,216,0.55);
+  --glass-bg:     rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.09);
+
+  --acc-single-cw:  210px;
+  --acc-cards-count: 15;
+  --acc-anim-dur:    45s;
+}
+
+/* ═══════════════════════════════════════════
+   Section
+   ═══════════════════════════════════════════ */
+.team-section {
+  font-family: 'Tajawal', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 56px 24px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--section-bg);
+  background-image:
+    radial-gradient(ellipse 80% 55% at 50% 25%, rgba(10,30,70,0.6) 0%, transparent 70%),
+    repeating-linear-gradient(
+      0deg, transparent, transparent 49px,
+      rgba(30,70,140,0.17) 49px, rgba(30,70,140,0.17) 50px
+    ),
+    repeating-linear-gradient(
+      90deg, transparent, transparent 79px,
+      rgba(30,70,140,0.17) 79px, rgba(30,70,140,0.17) 80px
+    );
+}
+
+/* بقعة ضوء ذهبية علوية */
+.team-section::before {
+  content: "";
+  position: absolute;
+  top: -8%; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 260px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* بقعة ضوء زرقاء سفلية */
+.team-section::after {
+  content: "";
+  position: absolute;
+  bottom: -5%; left: 30%;
+  width: 400px; height: 200px;
+  background: radial-gradient(ellipse, rgba(30,80,200,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.team-section * { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════════
+   Header
+   ═══════════════════════════════════════════ */
+.team-header { text-align: center; }
+
+.team-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  background: var(--gold-dim);
+  padding: 5px 20px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.tag-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: tagPulse 2s ease-in-out infinite;
+}
+
+@keyframes tagPulse {
+  0%,100% { opacity:1; transform:scale(1);   }
+  50%      { opacity:.4; transform:scale(1.7); }
+}
+
+.team-title {
+  font-size: clamp(24px, 3.5vw, 46px);
+  font-weight: 900;
+  color: var(--text);
+  margin: 0 0 6px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.gold-word {
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(201,168,76,0.4);
+}
+
+.team-sub {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin: 0 0 10px;
+  letter-spacing: 0.3px;
+}
+
+.title-bar {
+  width: 140px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold), 0 0 24px rgba(201,168,76,0.4);
+}
+
+/* ═══════════════════════════════════════════
+   Row Labels
+   ═══════════════════════════════════════════ */
+.static-row { text-align: center; }
+
+.row-label {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 0 0 12px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   CARD — Glassmorphism ذهبي فاخر
+   ═══════════════════════════════════════════ */
+.circle-card,
+.square-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  width: 220px;
+  height: 220px;
+
+  /* ✅ Glassmorphism: شفاف مع تأثير زجاج مضيء */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.08) 0%,
+      rgba(201,168,76,0.05) 50%,
+      rgba(255,255,255,0.03) 100%
+    );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  /* ✅ بوردر ذهبي مزدوج — الخط الخارجي + داخلي */
+  border: 1px solid rgba(201,168,76,0.4);
+  outline: 1px solid rgba(255,255,255,0.05);
+  outline-offset: -3px;
+
+  box-shadow:
+    /* ظل خارجي عميق */
+    0 20px 60px rgba(0,0,0,0.5),
+    /* هالة ذهبية خفيفة */
+    0 0 0 1px rgba(201,168,76,0.08),
+    /* توهج داخلي علوي */
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    /* توهج داخلي سفلي ذهبي */
+    inset 0 -1px 0 rgba(201,168,76,0.1);
+
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  padding: 14px;
+  cursor: default;
+}
+
+.circle-card:hover,
+.square-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(201,168,76,0.65);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(201,168,76,0.15),
+    0 0 40px rgba(201,168,76,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    inset 0 -1px 0 rgba(201,168,76,0.15);
+}
+
+.mgr-card    { width: 220px; height: 220px; }
+.office-card { width: 220px; height: 220px; }
+
+/* ═══════════════════════════════════════════
+   Avatar Ring
+   ═══════════════════════════════════════════ */
+.av-ring {
+  position: relative;
+  width: 88px; height: 88px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.av-ring svg { position: relative; z-index: 1; }
+
+/* Spinner نقاط دوارة */
+.av-spinner {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px dotted rgba(201,168,76,0.5);
+  animation: spinDot 25s linear infinite;
+  z-index: 0;
+}
+
+/* حلقة ثابتة شفافة */
+.av-ring::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.15);
+  z-index: 0;
+}
+
+@keyframes spinDot { to { transform: rotate(360deg); } }
+
+.av-glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 68%);
+  animation: glowAnim 3.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes glowAnim {
+  0%,100% { opacity:.35; transform:scale(1);    }
+  50%      { opacity:.85; transform:scale(1.18); }
+}
+
+/* ═══════════════════════════════════════════
+   Card Text
+   ═══════════════════════════════════════════ */
+.card-badge {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
+
+.card-name {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 2px 0 2px;
+  white-space: nowrap;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
+.card-role {
+  font-size: 9px;
+  font-weight: 600;
+  margin: 0 0 3px;
+  letter-spacing: .8px;
+}
+
+.gold { color: var(--gold-light); }
+
+.card-spec {
+  font-size: 8px;
+  color: rgba(232,228,216,0.6);
+  line-height: 1.5;
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 145px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(201,168,76,0.5);
+}
+
+/* ═══════════════════════════════════════════
+   Layout
+   ═══════════════════════════════════════════ */
+.managers-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* ─── خط فاصل بين الكروت ─── */
+.managers-row .circle-card + .circle-card,
+.managers-row .circle-card + .square-card {
+  position: relative;
+}
+
+.managers-row .circle-card + .circle-card::before,
+.managers-row .circle-card + .square-card::before {
+  content: "";
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.25), transparent);
+}
+
+/* ═══════════════════════════════════════════
+   Carousel
+   ═══════════════════════════════════════════ */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.fade-l, .fade-r {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fade-l { left:  0; background: linear-gradient(to right, var(--section-bg) 20%, transparent); }
+.fade-r { right: 0; background: linear-gradient(to left,  var(--section-bg) 20%, transparent); }
+
+.carousel-track {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.acc-track {
+  animation: perfectScrollAcc var(--acc-anim-dur) linear infinite;
+}
+
+@keyframes perfectScrollAcc {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * var(--acc-single-cw) * var(--acc-cards-count))); }
+}
+
+/* ═══════════════════════════════════════════
+   Accountant Card — نفس الجلاس لكن أصغر
+   ═══════════════════════════════════════════ */
+.acc-card {
+  min-width: 180px;
+  flex: 0 0 180px;
+  margin: 0 15px;
+  height: 180px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.07) 0%,
+      rgba(201,168,76,0.04) 50%,
+      rgba(255,255,255,0.02) 100%
+    );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(201,168,76,0.3);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(201,168,76,0.08);
+
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.acc-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(201,168,76,0.55);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.5),
+    0 0 25px rgba(201,168,76,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.acc-av-wrap {
+  position: relative;
+  width: 72px; height: 72px;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.acc-av-wrap svg { position: relative; z-index: 1; }
+
+.acc-spinner {
+  position: absolute;
+  top: -8px; left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border-radius: 50%;
+  border: 1.5px dotted rgba(201,168,76,0.4);
+  animation: spinAcc 360s linear infinite;
+  z-index: 0;
+}
+
+@keyframes spinAcc {
+  to { transform: rotate(360deg); }
+}
+
+.acc-years {
+  font-size: 8px; font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-bottom: 3px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.acc-name {
+  font-size: 11px; font-weight: 800;
+  color: #ffffff;
+  margin: 2px 0;
+  white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+.acc-spec {
+  font-size: 8px;
+  color: rgba(232,228,216,0.58);
+  line-height: 1.5; margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 130px;
+}
+
+/* ═══════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .team-section { padding: 48px 14px 14px; }
+  .mgr-card, .office-card { width: 168px; height: 168px; }
+  .managers-row { gap: 16px; }
+  .av-ring { width: 70px; height: 70px; }
+}
+
+@media (max-width: 480px) {
+  .team-title { font-size: 22px; }
+  .mgr-card, .office-card { width: 148px; height: 148px; }
+  .managers-row { gap: 12px; }
+}

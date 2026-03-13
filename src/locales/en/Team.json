@@ -1,0 +1,44 @@
+{
+  "team": {
+    "tag": "Our Team",
+    "title1": "Our",
+    "title2": "Distinguished Team",
+    "subtitle": "An elite of professionals working for your financial excellence",
+    "managersLabel": "⬥ Leadership & Management ⬥",
+    "officeLabel": "⬥ Office Management ⬥",
+    "accLabel": "⬥ Accounting Team ⬥",
+    "years": "years exp.",
+
+    "manager1": {
+      "name": "Mr. Mohamed El-Sayed",
+      "role": "Executive Director",
+      "spec": "+15 years in financial management"
+    },
+    "manager2": {
+      "name": "Ms. Nadia Abdullah",
+      "role": "Operations Manager",
+      "spec": "Financial control & policy development"
+    },
+    "officeManager": {
+      "name": "Mr. Karim Mansour",
+      "role": "Office Manager",
+      "spec": "Daily operations & coordination"
+    },
+
+    "acc1":  { "name": "Omar Khaled",    "spec": "Auditing"              },
+    "acc2":  { "name": "Sara Ahmed",     "spec": "Tax & Zakat"           },
+    "acc3":  { "name": "Yousef Ali",     "spec": "Financial Analysis"    },
+    "acc4":  { "name": "Mona Hassan",    "spec": "Payroll"               },
+    "acc5":  { "name": "Tarek Mahmoud", "spec": "Auditing"              },
+    "acc6":  { "name": "Reem Ibrahim",  "spec": "Financial Analysis"    },
+    "acc7":  { "name": "Ahmed Fares",   "spec": "Balance Sheets"        },
+    "acc8":  { "name": "Dina Sami",     "spec": "Tax & Zakat"           },
+    "acc9":  { "name": "Khaled Rida",   "spec": "Internal Control"      },
+    "acc10": { "name": "Nour El-Din",   "spec": "External Audit"        },
+    "acc11": { "name": "Heba Saeed",    "spec": "Payroll"               },
+    "acc12": { "name": "Walid Gamal",   "spec": "Financial Analysis"    },
+    "acc13": { "name": "Aya Mohamed",   "spec": "Tax & Zakat"           },
+    "acc14": { "name": "Karim Adel",    "spec": "Auditing"              },
+    "acc15": { "name": "Lina Saleh",    "spec": "Balance Sheets"        }
+  }
+}

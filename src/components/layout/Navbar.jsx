@@ -15,6 +15,7 @@ export default function Navbar() {
     { key: "about", href: "#about" },
     { key: "services", href: "#services" },
     { key: "partners", href: "#partners" },
+    { key: "teams", href: "#teams" },
     { key: "news", href: "#news" },
     { key: "courses", href: "#courses" },
     { key: "contact", href: "#contact" },
