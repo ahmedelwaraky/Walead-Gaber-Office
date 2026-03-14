@@ -1,18 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "../style/Team.css";
 import { useTranslation } from "react-i18next";
-
 
 const managersData = [
   { id: "m1", nameKey: "team.manager1.name", roleKey: "team.manager1.role", specKey: "team.manager1.spec", badge: "CPA • CFA", initials: "م.س" },
   { id: "m2", nameKey: "team.manager2.name", roleKey: "team.manager2.role", specKey: "team.manager2.spec", badge: "MBA • CMA", initials: "ن.ع" },
 ];
- 
+
 const officeManagerData = {
   id: "om1", nameKey: "team.officeManager.name", roleKey: "team.officeManager.role",
   specKey: "team.officeManager.spec", badge: "BBA", initials: "ك.م",
 };
- 
+
 const accountantsData = [
   { id: 1,  nameKey: "team.acc1.name",  specKey: "team.acc1.spec",  years: 6,  initials: "ع.خ" },
   { id: 2,  nameKey: "team.acc2.name",  specKey: "team.acc2.spec",  years: 4,  initials: "س.أ" },
@@ -30,14 +29,13 @@ const accountantsData = [
   { id: 14, nameKey: "team.acc14.name", specKey: "team.acc14.spec", years: 8,  initials: "ك.ع" },
   { id: 15, nameKey: "team.acc15.name", specKey: "team.acc15.spec", years: 4,  initials: "ل.ص" },
 ];
- 
+
 const AvatarSVG = ({ initials, size = 80, isManager = false }) => {
   const uid = `av${initials.replace(/\./g, "")}${size}`;
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id={`bg-${uid}`} cx="38%" cy="32%" r="72%">
-          {/* ✅ لون أغمق وأعمق عشان يتميز عن الكرت */}
           <stop offset="0%" stopColor={isManager ? "#0a1628" : "#081220"} />
           <stop offset="100%" stopColor={isManager ? "#050c18" : "#040d1a"} />
         </radialGradient>
@@ -62,23 +60,19 @@ const AvatarSVG = ({ initials, size = 80, isManager = false }) => {
     </svg>
   );
 };
- 
+
 export default function Team() {
   const { t } = useTranslation();
- 
+
   useEffect(() => {
-    // ✅ نفس طريقة الكود الأصلي بالظبط:
-    // singleCardWidth = عرض الكرت + المارجن من الجانبين
-    const singleCardWidth = 180 + 30; // 180 عرض + 15 يمين + 15 شمال
+    const singleCardWidth = 180 + 30;
     const cardsCount      = accountantsData.length;
     const animDuration    = cardsCount * 3;
- 
-    document.documentElement.style.setProperty("--acc-single-cw",  `${singleCardWidth}px`);
+    document.documentElement.style.setProperty("--acc-single-cw",   `${singleCardWidth}px`);
     document.documentElement.style.setProperty("--acc-cards-count", `${cardsCount}`);
     document.documentElement.style.setProperty("--acc-anim-dur",    `${animDuration}s`);
   }, []);
- 
-  // ✅ نفس دالة renderDoctorSet من الكود الأصلي
+
   const renderAccSet = (keyPrefix) =>
     accountantsData.map((a) => (
       <div className="acc-card" key={`${keyPrefix}-${a.id}`}>
@@ -91,10 +85,10 @@ export default function Team() {
         <p className="acc-spec">{t(a.specKey)}</p>
       </div>
     ));
- 
+
   return (
     <section id="teams" className="team-section" dir="rtl">
- 
+
       {/* Header */}
       <div className="team-header">
         <div className="team-tag"><span className="tag-dot" />{t("team.tag", "فريق العمل")}</div>
@@ -104,15 +98,17 @@ export default function Team() {
         <p className="team-sub">{t("team.subtitle", "نخبة من المحترفين يعملون من أجل تميّزك المالي")}</p>
         <div className="title-bar"><span className="bar-dot" /></div>
       </div>
- 
-      {/* مديرين + مدير المكتب في نفس الصف */}
+
+      {/* القيادة والإدارة */}
       <div className="static-row">
         <p className="row-label">{t("team.managersLabel", "⬥ القيادة والإدارة ⬥")}</p>
+
+        {/* المديران */}
         <div className="managers-row">
-          {/* المديرين — دائري */}
           {managersData.map((m) => (
             <div className="circle-card mgr-card" key={m.id}>
-              <div className="av-ring"><div className="av-spinner" /><div className="av-glow" />
+              <div className="av-ring">
+                <div className="av-spinner" /><div className="av-glow" />
                 <AvatarSVG initials={m.initials} size={80} isManager />
               </div>
               <span className="card-badge">{m.badge}</span>
@@ -122,10 +118,13 @@ export default function Team() {
               <div className="stars">★★★★★</div>
             </div>
           ))}
- 
-          {/* مدير المكتب — مربع ولون مختلف */}
+        </div>
+
+        {/* مدير المكتب — صف منفصل وسطي */}
+        <div className="office-row">
           <div className="square-card office-card">
-            <div className="av-ring"><div className="av-spinner" /><div className="av-glow" />
+            <div className="av-ring">
+              <div className="av-spinner" /><div className="av-glow" />
               <AvatarSVG initials={officeManagerData.initials} size={80} isManager />
             </div>
             <span className="card-badge office-badge">{officeManagerData.badge}</span>
@@ -136,22 +135,21 @@ export default function Team() {
           </div>
         </div>
       </div>
- 
+
       {/* كاروسيل المحاسبين */}
       <div className="static-row">
         <p className="row-label">{t("team.accLabel", "⬥ الفريق المحاسبي ⬥")}</p>
       </div>
- 
+
       <div className="carousel-container">
         <div className="fade-l" /><div className="fade-r" />
-        {/* ✅ 3 sets بالظبط زي الكود الأصلي */}
         <div className="carousel-track acc-track">
           {renderAccSet("set1")}
           {renderAccSet("set2")}
           {renderAccSet("set3")}
         </div>
       </div>
- 
+
     </section>
   );
 }

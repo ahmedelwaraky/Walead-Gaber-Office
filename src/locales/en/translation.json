@@ -11,6 +11,23 @@
     "courses": "Courses",
     "contact": "Contact Us"
   },
+  "footer": {
+  "brand_name": "Walead Gaber Office",
+  "brand_desc": "A specialized office providing accounting, financial, and legal consulting services with the highest standards of quality and professionalism.",
+  "quick_links_title": "Quick Links",
+  "contact_title": "Contact Us",
+  "address": "Riyadh, Al Olaya District",
+  "phone": "+966 11 234 5678",
+  "email": "info@waleedgaber.com",
+  "copyright": "© 2026 Sedra Technology. All rights reserved.",
+  "links": {
+    "home":     "Home",
+    "about":    "About Us",
+    "services": "Services",
+    "news":     "News",
+    "contact":  "Contact Us"
+  }
+},
   "logo": {
     "title": "Walead Gaber Office",
     "subtitle": "Financial Office"

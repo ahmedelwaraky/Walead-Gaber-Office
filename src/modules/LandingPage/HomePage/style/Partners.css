@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
 
 /* ═══════════════════════════════════════════
-   Variables — نفس نظام Team
+   Variables
    ═══════════════════════════════════════════ */
 :root {
   --p-gold:       #C9A84C;
@@ -11,14 +11,13 @@
   --p-navy:       #0c1d40;
   --p-navy2:      #1a3570;
 
-  /* ✅ نفس متغيرات Team */
-  --mq-single-iw:  150px;  /* عرض العنصر 130 + 20 مارجن */
+  --mq-single-iw:   150px;
   --mq-items-count: 9;
   --mq-anim-dur:    36s;
 }
 
 /* ═══════════════════════════════════════════
-   Section — خلفية بيضاء فاخرة
+   Section
    ═══════════════════════════════════════════ */
 .partners-section {
   font-family: 'Tajawal', sans-serif;
@@ -27,15 +26,11 @@
   padding: 96px 0 80px;
   background: #ffffff;
   background-image:
-    /* نقطة ضوء ذهبية علوية */
     radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%),
-    /* نقطة ضوء رمادية يسار */
     radial-gradient(ellipse 40% 50% at -5% 50%, rgba(180,190,210,0.12) 0%, transparent 70%),
-    /* نقطة ضوء رمادية يمين */
     radial-gradient(ellipse 40% 50% at 105% 50%, rgba(180,190,210,0.12) 0%, transparent 70%);
 }
 
-/* شبكة خفيفة */
 .p-grid {
   position: absolute;
   inset: 0;
@@ -46,7 +41,6 @@
   z-index: 0;
 }
 
-/* بقع ضوء */
 .p-orb {
   position: absolute;
   border-radius: 50%;
@@ -70,8 +64,8 @@
 }
 
 @keyframes orbFloat {
-  0%,100% { transform: translate(0,0);      }
-  50%      { transform: translate(10px,-14px); }
+  0%,100% { transform: translate(0,0);         }
+  50%      { transform: translate(10px,-14px);  }
 }
 
 .partners-inner {
@@ -85,7 +79,10 @@
 /* ═══════════════════════════════════════════
    Header
    ═══════════════════════════════════════════ */
-.partners-header { text-align: center; margin-bottom: 52px; }
+.partners-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
 
 .p-badge {
   display: inline-flex;
@@ -111,12 +108,12 @@
 }
 
 @keyframes dotPulse {
-  0%,100% { opacity:1; transform:scale(1);   }
-  50%      { opacity:.4; transform:scale(1.7); }
+  0%,100% { opacity: 1;  transform: scale(1);   }
+  50%      { opacity: .4; transform: scale(1.7); }
 }
 
 .p-title {
-  font-size: clamp(30px, 4vw, 50px);
+  font-size: clamp(28px, 4vw, 50px);
   font-weight: 900;
   color: #0f172a;
   margin: 0 0 12px;
@@ -165,7 +162,6 @@
   padding: 8px 0;
 }
 
-/* fade الحواف */
 .p-fade-l, .p-fade-r {
   position: absolute;
   top: 0; bottom: 0;
@@ -178,7 +174,7 @@
 .p-fade-r { right: 0; background: linear-gradient(to left,  #ffffff 20%, transparent); }
 
 /* ═══════════════════════════════════════════
-   Track — ✅ نفس properties من Team بالظبط
+   Track
    ═══════════════════════════════════════════ */
 .mq-track {
   display: flex;
@@ -189,13 +185,13 @@
 }
 
 /* ═══════════════════════════════════════════
-   Item — min-width + margin = --mq-single-iw
+   Item
    ═══════════════════════════════════════════ */
 .mq-item {
   flex: 0 0 130px;
-  flex-shrink: 0;             /* ✅ صريح — منع الانكماش */
+  flex-shrink: 0;
   min-width: 130px;
-  margin: 0 10px;   /* 10+10 = 20 → 130+20 = 150 = --mq-single-iw ✅ */
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,7 +199,7 @@
 }
 
 /* ═══════════════════════════════════════════
-   Bubble — كرت دائري أنيق
+   Bubble
    ═══════════════════════════════════════════ */
 .partner-bubble {
   width: 80px; height: 80px;
@@ -212,17 +208,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
-
-  /* Navy داكن — تباين مع الخلفية البيضاء */
   background: linear-gradient(135deg, var(--p-navy) 0%, var(--p-navy2) 100%);
-
-  /* بوردر ذهبي خفيف */
   border: 1px solid rgba(201,168,76,0.3);
-
   box-shadow:
     0 6px 24px rgba(12,29,64,0.18),
     inset 0 1px 0 rgba(255,255,255,0.08);
-
   transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
               box-shadow 0.3s ease;
 }
@@ -305,21 +295,186 @@
 
 @keyframes revealUp {
   from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
 /* ═══════════════════════════════════════════
-   Responsive
+   Responsive — Tablet: ≤ 768px
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .partners-section { padding: 64px 0 56px; }
-  .partners-inner   { padding: 0 20px; }
-  .p-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .p-stat  { padding: 20px 12px; }
-  .p-stat-n { font-size: 28px; }
+  .partners-section {
+    padding: 60px 0 48px;
+  }
+
+  .partners-inner {
+    padding: 0 16px;
+  }
+
+  .partners-header {
+    margin-bottom: 36px;
+  }
+
+  .p-sub {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+
+  /* الـ fade أصغر عشان ميأكلش من المحتوى */
+  .p-fade-l, .p-fade-r {
+    width: 48px;
+  }
+
+  .p-marquee-wrap {
+    margin-bottom: 36px;
+  }
+
+  /* الـ bubbles شبكة 3×3 بدل صف واحد */
+  .mq-track {
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  .mq-item {
+    flex: 0 0 90px;
+    min-width: 90px;
+    margin: 0 4px;
+    gap: 8px;
+  }
+
+  .partner-bubble {
+    width: 68px;
+    height: 68px;
+  }
+
+  .partner-bubble svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .partner-label {
+    font-size: 10px;
+  }
+
+  /* Stats: 3 أعمدة أصغر */
+  .p-stats {
+    gap: 12px;
+  }
+
+  .p-stat {
+    padding: 18px 10px;
+    border-radius: 14px;
+  }
+
+  .p-stat-n {
+    font-size: 26px;
+  }
+
+  .p-stat-l {
+    font-size: 11px;
+  }
 }
 
+/* ═══════════════════════════════════════════
+   Responsive — Small Mobile: ≤ 480px
+   ═══════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .p-stats { grid-template-columns: 1fr; max-width: 240px; margin: 0 auto; }
-  .partner-bubble { width: 68px; height: 68px; }
+  .partners-section {
+    padding: 48px 0 40px;
+  }
+
+  .partners-inner {
+    padding: 0 12px;
+  }
+
+  .p-title {
+    font-size: 24px;
+  }
+
+  .p-sub {
+    font-size: 12px;
+  }
+
+  .p-badge {
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 5px 14px;
+  }
+
+  /* الـ fade أصغر */
+  .p-fade-l, .p-fade-r {
+    width: 32px;
+  }
+
+  /* bubbles أصغر */
+  .mq-item {
+    flex: 0 0 76px;
+    min-width: 76px;
+    margin: 0 2px;
+    gap: 6px;
+  }
+
+  .partner-bubble {
+    width: 58px;
+    height: 58px;
+  }
+
+  .partner-bubble svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .partner-label {
+    font-size: 9px;
+  }
+
+  /* Stats: عمود واحد */
+  .p-stats {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .p-stat {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: right;
+  }
+
+  .p-stat-n {
+    font-size: 30px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .p-stat-l {
+    font-size: 13px;
+    text-align: start;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Responsive — Extra Small: ≤ 360px
+   ═══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .mq-item {
+    flex: 0 0 68px;
+    min-width: 68px;
+  }
+
+  .partner-bubble {
+    width: 52px;
+    height: 52px;
+  }
+
+  .partner-bubble svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .partner-label {
+    font-size: 8px;
+  }
 }

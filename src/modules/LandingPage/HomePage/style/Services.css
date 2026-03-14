@@ -25,7 +25,7 @@
 .srv-scale  { animation: srvScale  0.6s  ease both; }
 .srv-orb    { animation: srvOrb    9s ease-in-out infinite; }
 
-/* ✅ السيكشن يملأ الشاشة — المحتوى بيتوزع فيها */
+/* ✅ السيكشن يملأ الشاشة */
 #services {
   min-height: 100vh;
   padding: 0 !important;
@@ -35,12 +35,11 @@
   box-sizing: border-box;
 }
 
-/* ✅ الـ wrapper الداخلي يتمركز ويأخد padding كافي */
+/* ✅ الـ wrapper الداخلي */
 #services > .relative.z-10 {
-  padding-top: 48px !important;
+  padding-top: 110px !important;
   padding-bottom: 48px !important;
 }
-
 /* ── Cards ── */
 .srv-card {
   position: relative;

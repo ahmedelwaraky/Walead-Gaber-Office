@@ -11,10 +11,8 @@
   --section-bg:   #071022;
   --text:         #e8e4d8;
   --text-dim:     rgba(232,228,216,0.55);
-  --glass-bg:     rgba(255,255,255,0.04);
-  --glass-border: rgba(255,255,255,0.09);
 
-  --acc-single-cw:  210px;
+  --acc-single-cw:   210px;
   --acc-cards-count: 15;
   --acc-anim-dur:    45s;
 }
@@ -24,28 +22,22 @@
    ═══════════════════════════════════════════ */
 .team-section {
   font-family: 'Tajawal', sans-serif;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 56px 24px 20px;
+  padding: 60px 24px 16px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
   background-color: var(--section-bg);
   background-image:
     radial-gradient(ellipse 80% 55% at 50% 25%, rgba(10,30,70,0.6) 0%, transparent 70%),
-    repeating-linear-gradient(
-      0deg, transparent, transparent 49px,
-      rgba(30,70,140,0.17) 49px, rgba(30,70,140,0.17) 50px
-    ),
-    repeating-linear-gradient(
-      90deg, transparent, transparent 79px,
-      rgba(30,70,140,0.17) 79px, rgba(30,70,140,0.17) 80px
-    );
+    repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(30,70,140,0.17) 49px, rgba(30,70,140,0.17) 50px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(30,70,140,0.17) 79px, rgba(30,70,140,0.17) 80px);
 }
 
-/* بقعة ضوء ذهبية علوية */
 .team-section::before {
   content: "";
   position: absolute;
@@ -57,7 +49,6 @@
   z-index: 0;
 }
 
-/* بقعة ضوء زرقاء سفلية */
 .team-section::after {
   content: "";
   position: absolute;
@@ -78,37 +69,37 @@
 .team-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
+  gap: 6px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   color: var(--gold);
   border: 1px solid var(--gold-border);
   background: var(--gold-dim);
-  padding: 5px 20px;
+  padding: 3px 14px;
   border-radius: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   backdrop-filter: blur(8px);
 }
 
 .tag-dot {
-  width: 6px; height: 6px;
+  width: 5px; height: 5px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 8px var(--gold);
+  box-shadow: 0 0 6px var(--gold);
   animation: tagPulse 2s ease-in-out infinite;
 }
 
 @keyframes tagPulse {
-  0%,100% { opacity:1; transform:scale(1);   }
-  50%      { opacity:.4; transform:scale(1.7); }
+  0%,100% { opacity: 1;  transform: scale(1);   }
+  50%      { opacity: .4; transform: scale(1.7); }
 }
 
 .team-title {
-  font-size: clamp(24px, 3.5vw, 46px);
+  font-size: clamp(18px, 2.8vw, 36px);
   font-weight: 900;
   color: var(--text);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   line-height: 1.15;
   letter-spacing: -0.5px;
 }
@@ -119,14 +110,13 @@
 }
 
 .team-sub {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--text-dim);
-  margin: 0 0 10px;
-  letter-spacing: 0.3px;
+  margin: 0 0 6px;
 }
 
 .title-bar {
-  width: 140px; height: 2px;
+  width: 120px; height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   margin: 0 auto;
   display: flex;
@@ -135,10 +125,10 @@
 }
 
 .bar-dot {
-  width: 8px; height: 8px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 12px var(--gold), 0 0 24px rgba(201,168,76,0.4);
+  box-shadow: 0 0 10px var(--gold);
 }
 
 /* ═══════════════════════════════════════════
@@ -147,17 +137,17 @@
 .static-row { text-align: center; }
 
 .row-label {
-  font-size: 10px;
-  letter-spacing: 5px;
+  font-size: 9px;
+  letter-spacing: 4px;
   color: var(--gold);
   font-weight: 700;
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   opacity: 0.6;
   text-transform: uppercase;
 }
 
 /* ═══════════════════════════════════════════
-   CARD — Glassmorphism ذهبي فاخر
+   Cards
    ═══════════════════════════════════════════ */
 .circle-card,
 .square-card {
@@ -166,85 +156,66 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 20px;
-  width: 220px;
-  height: 220px;
-
-  /* ✅ Glassmorphism: شفاف مع تأثير زجاج مضيء */
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.08) 0%,
-      rgba(201,168,76,0.05) 50%,
-      rgba(255,255,255,0.03) 100%
-    );
+  border-radius: 16px;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(201,168,76,0.05) 50%, rgba(255,255,255,0.03) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-
-  /* ✅ بوردر ذهبي مزدوج — الخط الخارجي + داخلي */
   border: 1px solid rgba(201,168,76,0.4);
   outline: 1px solid rgba(255,255,255,0.05);
   outline-offset: -3px;
-
   box-shadow:
-    /* ظل خارجي عميق */
-    0 20px 60px rgba(0,0,0,0.5),
-    /* هالة ذهبية خفيفة */
+    0 12px 40px rgba(0,0,0,0.5),
     0 0 0 1px rgba(201,168,76,0.08),
-    /* توهج داخلي علوي */
     inset 0 1px 0 rgba(255,255,255,0.12),
-    /* توهج داخلي سفلي ذهبي */
     inset 0 -1px 0 rgba(201,168,76,0.1);
-
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
               box-shadow 0.35s ease,
               border-color 0.35s ease;
-  padding: 14px;
+  padding: 10px;
   cursor: default;
 }
 
 .circle-card:hover,
 .square-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-5px) scale(1.02);
   border-color: rgba(201,168,76,0.65);
   box-shadow:
-    0 30px 70px rgba(0,0,0,0.55),
+    0 20px 50px rgba(0,0,0,0.55),
     0 0 0 1px rgba(201,168,76,0.15),
-    0 0 40px rgba(201,168,76,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.15),
-    inset 0 -1px 0 rgba(201,168,76,0.15);
+    0 0 30px rgba(201,168,76,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
-.mgr-card    { width: 220px; height: 220px; }
-.office-card { width: 220px; height: 220px; }
+.mgr-card    { width: 160px; height: 160px; }
+.office-card { width: 160px; height: 160px; }
 
 /* ═══════════════════════════════════════════
    Avatar Ring
    ═══════════════════════════════════════════ */
 .av-ring {
   position: relative;
-  width: 88px; height: 88px;
-  margin-bottom: 8px;
+  width: 64px; height: 64px;
+  margin-bottom: 5px;
   flex-shrink: 0;
 }
 
 .av-ring svg { position: relative; z-index: 1; }
 
-/* Spinner نقاط دوارة */
 .av-spinner {
   position: absolute;
-  inset: -8px;
+  inset: -6px;
   border-radius: 50%;
   border: 1.5px dotted rgba(201,168,76,0.5);
   animation: spinDot 25s linear infinite;
   z-index: 0;
 }
 
-/* حلقة ثابتة شفافة */
 .av-ring::before {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -3px;
   border-radius: 50%;
   border: 1px solid rgba(201,168,76,0.15);
   z-index: 0;
@@ -254,7 +225,7 @@
 
 .av-glow {
   position: absolute;
-  inset: -18px;
+  inset: -14px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 68%);
   animation: glowAnim 3.5s ease-in-out infinite;
@@ -262,8 +233,8 @@
 }
 
 @keyframes glowAnim {
-  0%,100% { opacity:.35; transform:scale(1);    }
-  50%      { opacity:.85; transform:scale(1.18); }
+  0%,100% { opacity: .35; transform: scale(1);    }
+  50%      { opacity: .85; transform: scale(1.18); }
 }
 
 /* ═══════════════════════════════════════════
@@ -271,52 +242,52 @@
    ═══════════════════════════════════════════ */
 .card-badge {
   display: inline-block;
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: var(--gold-light);
   background: rgba(201,168,76,0.1);
   border: 1px solid rgba(201,168,76,0.3);
-  padding: 2px 10px;
-  border-radius: 12px;
-  margin-bottom: 5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 3px;
 }
 
 .card-name {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  color: #ffffff;
-  margin: 2px 0 2px;
+  color: #fff;
+  margin: 1px 0;
   white-space: nowrap;
   text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 
 .card-role {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 600;
-  margin: 0 0 3px;
-  letter-spacing: .8px;
+  margin: 0 0 2px;
+  letter-spacing: .6px;
 }
 
 .gold { color: var(--gold-light); }
 
 .card-spec {
-  font-size: 8px;
+  font-size: 7px;
   color: rgba(232,228,216,0.6);
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
   white-space: normal;
   word-break: break-word;
-  max-width: 145px;
+  max-width: 120px;
 }
 
 .stars {
   color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-top: 4px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-top: 3px;
   opacity: 0.9;
-  text-shadow: 0 0 8px rgba(201,168,76,0.5);
+  text-shadow: 0 0 6px rgba(201,168,76,0.5);
 }
 
 /* ═══════════════════════════════════════════
@@ -326,26 +297,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
   flex-wrap: wrap;
-}
-
-/* ─── خط فاصل بين الكروت ─── */
-.managers-row .circle-card + .circle-card,
-.managers-row .circle-card + .square-card {
-  position: relative;
 }
 
 .managers-row .circle-card + .circle-card::before,
 .managers-row .circle-card + .square-card::before {
   content: "";
   position: absolute;
-  right: calc(100% + 14px);
+  right: calc(100% + 10px);
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
   height: 60%;
   background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.25), transparent);
+}
+
+.office-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 }
 
 /* ═══════════════════════════════════════════
@@ -362,7 +333,7 @@
 .fade-l, .fade-r {
   position: absolute;
   top: 0; bottom: 0;
-  width: 120px;
+  width: 100px;
   z-index: 10;
   pointer-events: none;
 }
@@ -374,7 +345,7 @@
   display: flex;
   white-space: nowrap;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0,0,0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
@@ -389,37 +360,28 @@
 }
 
 /* ═══════════════════════════════════════════
-   Accountant Card — نفس الجلاس لكن أصغر
+   Accountant Card
    ═══════════════════════════════════════════ */
 .acc-card {
-  min-width: 180px;
-  flex: 0 0 180px;
-  margin: 0 15px;
-  height: 180px;
-  border-radius: 16px;
+  min-width: 140px;
+  flex: 0 0 140px;
+  margin: 0 12px;
+  height: 148px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.07) 0%,
-      rgba(201,168,76,0.04) 50%,
-      rgba(255,255,255,0.02) 100%
-    );
+  background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(201,168,76,0.04) 50%, rgba(255,255,255,0.02) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-
   border: 1px solid rgba(201,168,76,0.3);
   box-shadow:
-    0 12px 40px rgba(0,0,0,0.45),
+    0 10px 30px rgba(0,0,0,0.45),
     inset 0 1px 0 rgba(255,255,255,0.1),
     inset 0 -1px 0 rgba(201,168,76,0.08);
-
-  padding: 10px;
+  padding: 8px;
   box-sizing: border-box;
   transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
               border-color 0.3s ease,
@@ -427,18 +389,14 @@
 }
 
 .acc-card:hover {
-  transform: translateY(-6px) scale(1.03);
+  transform: translateY(-5px) scale(1.03);
   border-color: rgba(201,168,76,0.55);
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.5),
-    0 0 25px rgba(201,168,76,0.1),
-    inset 0 1px 0 rgba(255,255,255,0.12);
 }
 
 .acc-av-wrap {
   position: relative;
-  width: 72px; height: 72px;
-  margin-bottom: 6px;
+  width: 56px; height: 56px;
+  margin-bottom: 5px;
   flex-shrink: 0;
 }
 
@@ -446,60 +404,98 @@
 
 .acc-spinner {
   position: absolute;
-  top: -8px; left: -8px;
-  width: calc(100% + 16px);
-  height: calc(100% + 16px);
+  top: -6px; left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
   border-radius: 50%;
   border: 1.5px dotted rgba(201,168,76,0.4);
   animation: spinAcc 360s linear infinite;
   z-index: 0;
 }
 
-@keyframes spinAcc {
-  to { transform: rotate(360deg); }
-}
+@keyframes spinAcc { to { transform: rotate(360deg); } }
 
 .acc-years {
-  font-size: 8px; font-weight: 700;
+  font-size: 7px; font-weight: 700;
   color: var(--gold-light);
   background: rgba(201,168,76,0.1);
   border: 1px solid rgba(201,168,76,0.25);
-  padding: 2px 10px;
-  border-radius: 10px;
-  margin-bottom: 3px;
+  padding: 1px 8px;
+  border-radius: 8px;
+  margin-bottom: 2px;
   letter-spacing: 1px;
   display: inline-block;
 }
 
 .acc-name {
-  font-size: 11px; font-weight: 800;
-  color: #ffffff;
+  font-size: 10px; font-weight: 800;
+  color: #fff;
   margin: 2px 0;
   white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
 }
 
 .acc-spec {
-  font-size: 8px;
+  font-size: 7px;
   color: rgba(232,228,216,0.58);
-  line-height: 1.5; margin: 0;
+  line-height: 1.4;
+  margin: 0;
   white-space: normal;
   word-break: break-word;
-  max-width: 130px;
+  max-width: 110px;
 }
 
 /* ═══════════════════════════════════════════
-   Responsive
+   Responsive — Tablet: ≤ 768px
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .team-section { padding: 48px 14px 14px; }
-  .mgr-card, .office-card { width: 168px; height: 168px; }
-  .managers-row { gap: 16px; }
-  .av-ring { width: 70px; height: 70px; }
+  .team-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 16px 20px;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .managers-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .managers-row .circle-card + .circle-card::before,
+  .managers-row .circle-card + .square-card::before { display: none; }
+
+  .mgr-card, .office-card { width: 170px; height: 170px; }
+  .av-ring { width: 60px; height: 60px; }
+  .fade-l, .fade-r { width: 50px; }
 }
 
+/* ═══════════════════════════════════════════
+   Responsive — Mobile: ≤ 480px
+   ═══════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .team-title { font-size: 22px; }
-  .mgr-card, .office-card { width: 148px; height: 148px; }
-  .managers-row { gap: 12px; }
+  .team-section { padding: 50px 12px 16px; gap: 14px; }
+
+  .team-title { font-size: 18px; }
+  .team-sub   { font-size: 11px; }
+
+  .mgr-card, .office-card { width: 155px; height: 155px; padding: 8px; }
+  .av-ring { width: 54px; height: 54px; }
+
+  .card-name  { font-size: 10px; }
+  .card-spec  { font-size: 6px; max-width: 110px; }
+  .card-badge { font-size: 6px; }
+
+  .acc-card { min-width: 124px; flex: 0 0 124px; height: 132px; margin: 0 6px; }
+  .acc-name  { font-size: 9px; }
+  .acc-spec  { font-size: 6px; }
+  .fade-l, .fade-r { width: 32px; }
+}
+
+/* ═══════════════════════════════════════════
+   Responsive — Extra Small: ≤ 360px
+   ═══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .mgr-card, .office-card { width: 145px; height: 145px; }
+  .av-ring { width: 50px; height: 50px; }
 }
