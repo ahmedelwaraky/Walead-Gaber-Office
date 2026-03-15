@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
 
-/* ═══════════════════════════════════════════
-   Variables
-   ═══════════════════════════════════════════ */
 :root {
   --gold:         #C9A84C;
   --gold-light:   #E8C87A;
@@ -12,18 +9,15 @@
   --text:         #e8e4d8;
   --text-dim:     rgba(232,228,216,0.55);
 
-  --acc-single-cw:   210px;
-  --acc-cards-count: 15;
-  --acc-anim-dur:    45s;
+  --acc-single-cw:   180px;
+  --acc-cards-count: 16;
+  --acc-anim-dur:    48s;
 }
 
-/* ═══════════════════════════════════════════
-   Section
-   ═══════════════════════════════════════════ */
 .team-section {
   font-family: 'Tajawal', sans-serif;
   height: 100vh;
-  min-height: 680px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -61,9 +55,6 @@
 
 .team-section * { position: relative; z-index: 1; }
 
-/* ═══════════════════════════════════════════
-   Header
-   ═══════════════════════════════════════════ */
 .team-header { text-align: center; }
 
 .team-tag {
@@ -131,9 +122,6 @@
   box-shadow: 0 0 10px var(--gold);
 }
 
-/* ═══════════════════════════════════════════
-   Row Labels
-   ═══════════════════════════════════════════ */
 .static-row { text-align: center; }
 
 .row-label {
@@ -141,14 +129,11 @@
   letter-spacing: 4px;
   color: var(--gold);
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   opacity: 0.6;
   text-transform: uppercase;
 }
 
-/* ═══════════════════════════════════════════
-   Cards
-   ═══════════════════════════════════════════ */
 .circle-card,
 .square-card {
   display: flex;
@@ -156,9 +141,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 18px;
-  width: 190px;
-  height: 210px;
+  border-radius: 20px;
+  width: 210px;
+  height: 195px;
   background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(201,168,76,0.05) 50%, rgba(255,255,255,0.03) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -173,14 +158,14 @@
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
               box-shadow 0.35s ease,
               border-color 0.35s ease;
-  padding: 14px 12px;
-  gap: 3px;
+  padding: 18px 14px;
+  gap: 8px;
   cursor: default;
 }
 
 .circle-card:hover,
 .square-card:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-6px) scale(1.03);
   border-color: rgba(201,168,76,0.65);
   box-shadow:
     0 20px 50px rgba(0,0,0,0.55),
@@ -189,28 +174,47 @@
     inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
-.mgr-card    { width: 190px; height: 210px; }
-.office-card { width: 190px; height: 210px; }
+.mgr-card { width: 240px; height: 265px; }
 
-/* ═══════════════════════════════════════════
-   Avatar Ring
-   ═══════════════════════════════════════════ */
+.av-img {
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center top;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.av-img--lg {
+  width: 155px;
+  height: 155px;
+  border: 2px solid rgba(201,168,76,0.55);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.12), 0 4px 20px rgba(0,0,0,0.5);
+  background: #081220;
+}
+
+.av-img--sm {
+  width: 105px;
+  height: 105px;
+  border: 1.5px solid rgba(201,168,76,0.4);
+  box-shadow: 0 0 0 2px rgba(201,168,76,0.08), 0 4px 12px rgba(0,0,0,0.4);
+  background: #081220;
+}
+
 .av-ring {
   position: relative;
-  width: 72px; height: 72px;
-  margin-bottom: 6px;
+  width: 155px; height: 155px;
   flex-shrink: 0;
 }
 
-.av-ring svg { position: relative; z-index: 1; }
+.av-ring img { position: relative; z-index: 1; }
 
 .av-spinner {
   position: absolute;
-  inset: -6px;
+  inset: -7px;
   border-radius: 50%;
   border: 1.5px dotted rgba(201,168,76,0.5);
   opacity: 0;
-  animation: none;
   transition: opacity 0.3s ease;
   z-index: 0;
 }
@@ -224,7 +228,7 @@
 .av-ring::before {
   content: "";
   position: absolute;
-  inset: -3px;
+  inset: -4px;
   border-radius: 50%;
   border: 1px solid rgba(201,168,76,0.15);
   z-index: 0;
@@ -234,7 +238,7 @@
 
 .av-glow {
   position: absolute;
-  inset: -14px;
+  inset: -16px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 68%);
   animation: glowAnim 3.5s ease-in-out infinite;
@@ -246,94 +250,34 @@
   50%      { opacity: .85; transform: scale(1.18); }
 }
 
-/* ═══════════════════════════════════════════
-   Card Text
-   ═══════════════════════════════════════════ */
-.card-badge {
-  display: inline-block;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--gold-light);
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.3);
-  padding: 2px 10px;
-  border-radius: 10px;
-  margin-bottom: 4px;
-  white-space: nowrap;
-}
-
 .card-name {
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 800;
   color: #fff;
-  margin: 2px 0;
+  margin: 0;
   white-space: nowrap;
   text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   line-height: 1.3;
 }
 
 .card-role {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 600;
-  margin: 0 0 2px;
+  margin: 0;
   letter-spacing: .5px;
   line-height: 1.3;
 }
 
 .gold { color: var(--gold-light); }
 
-.card-spec {
-  font-size: 8px;
-  color: rgba(232,228,216,0.65);
-  line-height: 1.5;
-  margin: 0;
-  white-space: normal;
-  word-break: break-word;
-  max-width: 155px;
-}
-
-.stars {
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-top: 4px;
-  opacity: 0.9;
-  text-shadow: 0 0 6px rgba(201,168,76,0.5);
-}
-
-/* ═══════════════════════════════════════════
-   Layout
-   ═══════════════════════════════════════════ */
 .managers-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
-.managers-row .circle-card + .circle-card::before,
-.managers-row .circle-card + .square-card::before {
-  content: "";
-  position: absolute;
-  right: calc(100% + 10px);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 60%;
-  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.25), transparent);
-}
-
-.office-row {
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
-}
-
-/* ═══════════════════════════════════════════
-   Carousel
-   ═══════════════════════════════════════════ */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -371,15 +315,12 @@
   100% { transform: translateX(calc(-1 * var(--acc-single-cw) * var(--acc-cards-count))); }
 }
 
-/* ═══════════════════════════════════════════
-   Accountant Card
-   ═══════════════════════════════════════════ */
 .acc-card {
-  min-width: 140px;
-  flex: 0 0 140px;
+  min-width: 175px;
+  flex: 0 0 175px;
   margin: 0 12px;
-  height: 148px;
-  border-radius: 14px;
+  height: 190px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -393,8 +334,9 @@
     0 10px 30px rgba(0,0,0,0.45),
     inset 0 1px 0 rgba(255,255,255,0.1),
     inset 0 -1px 0 rgba(201,168,76,0.08);
-  padding: 8px;
+  padding: 10px 8px;
   box-sizing: border-box;
+  gap: 6px;
   transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
               border-color 0.3s ease,
               box-shadow 0.3s ease;
@@ -407,177 +349,90 @@
 
 .acc-av-wrap {
   position: relative;
-  width: 56px; height: 56px;
-  margin-bottom: 5px;
+  width: 105px; height: 105px;
   flex-shrink: 0;
 }
 
-.acc-av-wrap svg { position: relative; z-index: 1; }
+.acc-av-wrap img { position: relative; z-index: 1; }
 
 .acc-spinner { display: none; }
 
-.acc-years {
-  font-size: 7px; font-weight: 700;
-  color: var(--gold-light);
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.25);
-  padding: 1px 8px;
-  border-radius: 8px;
-  margin-bottom: 2px;
-  letter-spacing: 1px;
-  display: inline-block;
-}
-
 .acc-name {
-  font-size: 10px; font-weight: 800;
+  font-size: 13px; font-weight: 800;
   color: #fff;
-  margin: 2px 0;
+  margin: 0;
   white-space: nowrap;
 }
 
 .acc-spec {
-  font-size: 7px;
+  font-size: 10px;
   color: rgba(232,228,216,0.58);
   line-height: 1.4;
   margin: 0;
   white-space: normal;
   word-break: break-word;
-  max-width: 110px;
+  max-width: 130px;
 }
 
-/* ═══════════════════════════════════════════
-   Responsive — Tablet: ≤ 768px
-   ═══════════════════════════════════════════ */
+/* ── Tablet ≤ 768px ── */
 @media (max-width: 768px) {
   .team-section {
     height: auto;
-    min-height: 100vh;
+    min-height: unset;
     padding: 60px 16px 24px;
     justify-content: flex-start;
-    gap: 16px;
-    overflow-y: auto;
+    gap: 18px;
+    overflow-y: visible;
   }
 
-  .managers-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .managers-row .circle-card + .circle-card::before,
-  .managers-row .circle-card + .square-card::before { display: none; }
-
-  .mgr-card, .office-card {
-    width: 160px;
-    height: 210px;
-    padding: 12px 10px;
-    gap: 4px;
-  }
-
-  .av-ring { width: 62px; height: 62px; margin-bottom: 4px; }
-
-  .card-name  { font-size: 11px; white-space: normal; line-height: 1.4; }
-  .card-role  { font-size: 8.5px; line-height: 1.4; }
-  .card-spec  { font-size: 7.5px; max-width: 138px; line-height: 1.5; }
-  .card-badge { font-size: 7px; padding: 2px 8px; }
-  .stars      { font-size: 9px; margin-top: 3px; }
-
-  .office-row { margin-top: 4px; }
-  .row-label  { font-size: 8px; letter-spacing: 3px; margin-bottom: 8px; }
-
+  .mgr-card { width: 175px; height: 175px; padding: 14px 10px; }
+  .av-ring { width: 80px; height: 80px; }
+  .av-img--lg { width: 80px; height: 80px; }
+  .card-name { font-size: 12px; white-space: normal; }
+  .card-role { font-size: 10px; }
+  .managers-row { gap: 16px; }
   .fade-l, .fade-r { width: 40px; }
 
-  .acc-card {
-    min-width: 135px;
-    flex: 0 0 135px;
-    height: 155px;
-    margin: 0 8px;
-    gap: 3px;
-    padding: 10px 8px;
-  }
-
-  .acc-av-wrap { width: 58px; height: 58px; margin-bottom: 4px; }
-  .acc-name  { font-size: 10px; }
-  .acc-spec  { font-size: 7px; max-width: 115px; line-height: 1.4; }
-  .acc-years { font-size: 7px; }
+  .acc-card { min-width: 140px; flex: 0 0 140px; height: 145px; margin: 0 8px; }
+  .acc-av-wrap { width: 65px; height: 65px; }
+  .av-img--sm  { width: 65px; height: 65px; }
+  .acc-name    { font-size: 10px; }
+  .acc-spec    { font-size: 7.5px; }
 }
 
-/* ═══════════════════════════════════════════
-   Responsive — Mobile: ≤ 480px
-   ═══════════════════════════════════════════ */
+/* ── Mobile ≤ 480px ── */
 @media (max-width: 480px) {
-  .team-section {
-    padding: 56px 10px 20px;
-    gap: 14px;
-  }
-
+  .team-section { padding: 56px 10px 20px; gap: 14px; }
   .team-title { font-size: 17px; }
   .team-sub   { font-size: 10px; }
 
-  .mgr-card, .office-card {
-    width: 148px;
-    height: 200px;
-    padding: 10px 8px;
-    gap: 3px;
-  }
+  .mgr-card { width: 155px; height: 165px; padding: 12px 8px; }
+  .av-ring { width: 72px; height: 72px; }
+  .av-img--lg { width: 72px; height: 72px; }
+  .card-name { font-size: 11px; }
+  .card-role { font-size: 9px; }
+  .managers-row { gap: 12px; }
 
-  .av-ring { width: 56px; height: 56px; margin-bottom: 4px; }
-
-  .card-name  { font-size: 10.5px; white-space: normal; line-height: 1.3; }
-  .card-role  { font-size: 8px; line-height: 1.4; }
-  .card-spec  { font-size: 7px; max-width: 128px; line-height: 1.5; }
-  .card-badge { font-size: 6.5px; padding: 2px 7px; }
-  .stars      { font-size: 8px; letter-spacing: 1.5px; margin-top: 2px; }
-
-  .managers-row { gap: 10px; }
-
-  .acc-card {
-    min-width: 122px;
-    flex: 0 0 122px;
-    height: 148px;
-    margin: 0 6px;
-    padding: 8px 6px;
-    gap: 2px;
-  }
-
-  .acc-av-wrap { width: 52px; height: 52px; margin-bottom: 4px; }
-  .acc-name  { font-size: 9.5px; }
-  .acc-spec  { font-size: 6.5px; max-width: 108px; }
-  .acc-years { font-size: 6.5px; padding: 1px 6px; }
-
+  .acc-card { min-width: 128px; flex: 0 0 128px; height: 135px; margin: 0 7px; }
+  .acc-av-wrap { width: 58px; height: 58px; }
+  .av-img--sm  { width: 58px; height: 58px; }
+  .acc-name    { font-size: 9.5px; }
+  .acc-spec    { font-size: 7px; max-width: 112px; }
   .fade-l, .fade-r { width: 28px; }
 }
 
-/* ═══════════════════════════════════════════
-   Responsive — Extra Small: ≤ 360px
-   ═══════════════════════════════════════════ */
+/* ── XS ≤ 360px ── */
 @media (max-width: 360px) {
   .team-section { padding: 52px 8px 16px; gap: 12px; }
+  .mgr-card { width: 142px; height: 155px; padding: 10px 8px; }
+  .av-ring { width: 64px; height: 64px; }
+  .av-img--lg { width: 64px; height: 64px; }
+  .card-name { font-size: 10.5px; }
 
-  .mgr-card, .office-card {
-    width: 138px;
-    height: 192px;
-    padding: 8px;
-    gap: 2px;
-  }
-
-  .av-ring { width: 50px; height: 50px; }
-
-  .card-name  { font-size: 10px; }
-  .card-spec  { font-size: 6.5px; max-width: 115px; }
-  .card-badge { font-size: 6px; }
-
-  .acc-card {
-    min-width: 112px;
-    flex: 0 0 112px;
-    height: 138px;
-    margin: 0 5px;
-  }
-
-  .acc-av-wrap { width: 48px; height: 48px; }
-  .acc-name  { font-size: 9px; }
-  .acc-spec  { font-size: 6px; }
-
+  .acc-card { min-width: 118px; flex: 0 0 118px; height: 125px; margin: 0 5px; }
+  .acc-av-wrap { width: 52px; height: 52px; }
+  .av-img--sm  { width: 52px; height: 52px; }
+  .acc-name    { font-size: 9px; }
+  .acc-spec    { font-size: 6.5px; }
   .fade-l, .fade-r { width: 22px; }
 }

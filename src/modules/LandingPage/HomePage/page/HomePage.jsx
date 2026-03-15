@@ -24,10 +24,10 @@ export default function HomePage() {
       <HeroSection />
       <About />
       <Services />
-      <Partners />
       <Team />
-      <News />
-      <Courses />
+      <Partners />
+      {/* <News /> */}
+      {/* <Courses /> */}
       <Testimonials />
       <Contact />
       <Footer />

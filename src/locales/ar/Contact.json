@@ -1,24 +1,39 @@
 {
-  "contact": {
-    "badge": "تواصل معنا",
-    "heading_plain": "تواصل",
-    "heading_gold": "معنا",
-    "subheading": "نسعد بتواصلكم معنا للاستفسار عن خدماتنا",
-    "info": [
-      { "id": "address", "label": "العنوان",           "value": "الرياض، المملكة العربية السعودية - حي العليا" },
-      { "id": "phone",   "label": "الهاتف",             "value": "+966 11 234 5678" },
-      { "id": "email",   "label": "البريد",             "value": "info@almaliconsulting.com" }
-    ],
-    "map_label": "الرياض، حي العليا",
-    "form": {
-      "name_label":        "الاسم",
-      "name_placeholder":  "أدخل اسمك",
-      "email_label":       "البريد الإلكتروني",
-      "email_placeholder": "أدخل بريدك الإلكتروني",
-      "msg_label":         "الرسالة",
-      "msg_placeholder":   "اكتب رسالتك هنا...",
-      "submit":            "إرسال الرسالة",
-      "sent":              "✓ تم إرسال الرسالة!"
-    }
+ "contact": {
+  "badge": "تواصل معنا",
+  "heading_plain": "تواصل",
+  "heading_gold": "معنا",
+  "subheading": "نسعد بتواصلكم معنا للاستفسار عن خدماتنا",
+ "info": [
+  {
+    "id": "address",
+    "label": "فروعنا",
+    "values": [
+      "6 أكتوبر - المحور المركزي الخدمي، مركز أكتوبر التجاري، عمارة 1، مكتب 53",
+      "شارع طلعت حرب، عمارة 6، الدور الثاني، شبين الكوم"
+    ]
+  },
+  {
+    "id": "phone",
+    "label": "تواصل معنا",
+    "values": ["+201066335201", "0238371214"]
+  },
+  {
+    "id": "email",
+    "label": "البريد الإلكتروني",
+    "values": ["info@waledgaber.com"]
   }
+],
+  "map_label": "6 أكتوبر، مصر",
+  "form": {
+    "name_label":        "الاسم",
+    "name_placeholder":  "أدخل اسمك",
+    "email_label":       "البريد الإلكتروني",
+    "email_placeholder": "أدخل بريدك الإلكتروني",
+    "msg_label":         "الرسالة",
+    "msg_placeholder":   "اكتب رسالتك هنا...",
+    "submit":            "إرسال الرسالة",
+    "sent":              "✓ تم إرسال الرسالة!"
+  }
+}
 }

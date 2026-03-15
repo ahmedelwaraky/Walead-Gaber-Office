@@ -25,20 +25,20 @@
       "spec": "Daily operations & coordination"
     },
 
-    "acc1":  { "name": "Omar Khaled",    "spec": "Auditing"              },
-    "acc2":  { "name": "Sara Ahmed",     "spec": "Tax & Zakat"           },
-    "acc3":  { "name": "Yousef Ali",     "spec": "Financial Analysis"    },
-    "acc4":  { "name": "Mona Hassan",    "spec": "Payroll"               },
-    "acc5":  { "name": "Tarek Mahmoud", "spec": "Auditing"              },
-    "acc6":  { "name": "Reem Ibrahim",  "spec": "Financial Analysis"    },
-    "acc7":  { "name": "Ahmed Fares",   "spec": "Balance Sheets"        },
-    "acc8":  { "name": "Dina Sami",     "spec": "Tax & Zakat"           },
-    "acc9":  { "name": "Khaled Rida",   "spec": "Internal Control"      },
-    "acc10": { "name": "Nour El-Din",   "spec": "External Audit"        },
-    "acc11": { "name": "Heba Saeed",    "spec": "Payroll"               },
-    "acc12": { "name": "Walid Gamal",   "spec": "Financial Analysis"    },
-    "acc13": { "name": "Aya Mohamed",   "spec": "Tax & Zakat"           },
-    "acc14": { "name": "Karim Adel",    "spec": "Auditing"              },
-    "acc15": { "name": "Lina Saleh",    "spec": "Balance Sheets"        }
+    "acc1":  { "name": "Omar Khaled",    "role": "Auditing"              },
+    "acc2":  { "name": "Sara Ahmed",     "role": "Tax & Zakat"           },
+    "acc3":  { "name": "Yousef Ali",     "role": "Financial Analysis"    },
+    "acc4":  { "name": "Mona Hassan",    "role": "Payroll"               },
+    "acc5":  { "name": "Tarek Mahmoud", "role": "Auditing"              },
+    "acc6":  { "name": "Reem Ibrahim",  "role": "Financial Analysis"    },
+    "acc7":  { "name": "Ahmed Fares",   "role": "Balance Sheets"        },
+    "acc8":  { "name": "Dina Sami",     "role": "Tax & Zakat"           },
+    "acc9":  { "name": "Khaled Rida",   "role": "Internal Control"      },
+    "acc10": { "name": "Nour El-Din",   "role": "External Audit"        },
+    "acc11": { "name": "Heba Saeed",    "role": "Payroll"               },
+    "acc12": { "name": "Walid Gamal",   "role": "Financial Analysis"    },
+    "acc13": { "name": "Aya Mohamed",   "role": "Tax & Zakat"           },
+    "acc14": { "name": "Karim Adel",    "role": "Auditing"              },
+    "acc15": { "name": "Lina Saleh",    "role": "Balance Sheets"        }
   }
 }

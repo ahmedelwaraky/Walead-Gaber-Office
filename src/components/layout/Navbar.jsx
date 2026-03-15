@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "../../styles/Navbar.css";
+import logo from "../../assets/images/logo.png";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeKey, setActiveKey] = useState("home");
 
   const isAr = i18n.language === "ar";
   const dir = isAr ? "rtl" : "ltr";
 
   const NAV_LINKS = [
-    { key: "home", href: "#", active: true },
-    { key: "about", href: "#about" },
+    { key: "home",     href: "#"         },
+    { key: "about",    href: "#about"    },
     { key: "services", href: "#services" },
+    { key: "teams",    href: "#teams"    },
     { key: "partners", href: "#partners" },
-    { key: "teams", href: "#teams" },
-    { key: "news", href: "#news" },
-    { key: "courses", href: "#courses" },
-    { key: "contact", href: "#contact" },
+    { key: "contact",  href: "#contact"  },
   ];
 
   useEffect(() => {
@@ -32,9 +32,8 @@ export default function Navbar() {
     document.documentElement.lang = i18n.language;
   }, [i18n.language, dir]);
 
-  const toggleLang = () => {
-    i18n.changeLanguage(isAr ? "en" : "ar");
-  };
+  const toggleLang = () => i18n.changeLanguage(isAr ? "en" : "ar");
+  const handleNavClick = (key) => { setActiveKey(key); setMenuOpen(false); };
 
   return (
     <>
@@ -53,17 +52,18 @@ export default function Navbar() {
           WebkitBackdropFilter: "blur(22px)",
         }}
       >
-        <a href="#" className="flex items-center gap-3 shrink-0 no-underline">
-          <div
-            className="logo-shine relative w-11 h-11 rounded-xl flex items-center justify-center text-xl font-black overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg,#d4a843,#f0c96a)",
-              color: "#050d1f",
-              boxShadow: "0 4px 20px rgba(212,168,67,0.3)",
-            }}
-          >
-            م
-          </div>
+        {/* ── Logo ── */}
+        <a
+          href="#"
+          className="flex items-center gap-3 shrink-0 no-underline"
+          onClick={() => handleNavClick("home")}
+        >
+          <img
+            src={logo}
+            alt="logo"
+            className="w-18 h-18 object-contain"
+            draggable="false"
+          />
           <div className="flex flex-col leading-none">
             <span className="text-white text-base font-extrabold tracking-tight">
               {t("logo.title")}
@@ -77,13 +77,15 @@ export default function Navbar() {
           </div>
         </a>
 
+        {/* ── Desktop links ── */}
         <ul className="hidden lg:flex items-center gap-0.5 list-none m-0 p-0">
           {NAV_LINKS.map((link) => (
             <li key={link.key}>
               <a
                 href={link.href}
+                onClick={() => handleNavClick(link.key)}
                 className={`nav-link-underline block px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 no-underline ${
-                  link.active
+                  activeKey === link.key
                     ? "active text-yellow-300"
                     : "text-white/70 hover:text-white hover:bg-white/[0.07]"
                 }`}
@@ -94,6 +96,7 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* ── Lang button ── */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <button
             onClick={toggleLang}
@@ -109,6 +112,7 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* ── Hamburger ── */}
         <button
           className={`lg:hidden flex flex-col gap-1.5 p-1.5 cursor-pointer bg-transparent border-0 ${menuOpen ? "ham-open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -124,6 +128,7 @@ export default function Navbar() {
         </button>
       </nav>
 
+      {/* ── Mobile menu ── */}
       {menuOpen && (
         <div
           dir={dir}
@@ -137,8 +142,9 @@ export default function Navbar() {
             <a
               key={link.key}
               href={link.href}
+              onClick={() => handleNavClick(link.key)}
               className={`block px-4 py-3 rounded-xl text-sm font-medium no-underline transition-all duration-200 ${
-                link.active
+                activeKey === link.key
                   ? "text-yellow-300 bg-yellow-400/10"
                   : "text-white/70 hover:text-white hover:bg-white/[0.07]"
               }`}
